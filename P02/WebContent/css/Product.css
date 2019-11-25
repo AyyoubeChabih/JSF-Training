@@ -1,0 +1,28 @@
+.H {
+	font-size: 14px;
+	font-weight: bold;
+	background-color: #dec0b0;
+}
+
+.F {
+	font-size: 10px;
+	font-style: italic;
+	background-color: #dec0b0;
+}
+
+.C1 {
+	background-color: gray;
+	color: #fff;
+}
+
+.C2 {
+	background-color: silver;
+}
+
+.R1 {
+	background-color: #e4e4e4;
+}
+
+.R2 {
+	background-color: silver;
+}

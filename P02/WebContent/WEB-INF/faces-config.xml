@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config
+    xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_3.xsd"
+    version="2.3">
+
+	<application>
+		<locale-config>
+			<default-locale>fr</default-locale>
+			<supported-locale>en</supported-locale>
+			<supported-locale>ar</supported-locale>
+		</locale-config>
+		<message-bundle>messages</message-bundle>
+		<resource-bundle>
+			<base-name>messages</base-name>
+			<var>msg</var>
+		</resource-bundle>
+	</application>
+
+	<managed-bean>
+		<managed-bean-name>product</managed-bean-name>
+		<managed-bean-class>org.mql.jsf.models.Product</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	
+	<managed-bean>
+		<managed-bean-name>productAction</managed-bean-name>
+		<managed-bean-class>org.mql.jsf.web.actions.ProductAction</managed-bean-class>
+		<managed-bean-scope>application</managed-bean-scope>
+	</managed-bean>
+	
+	<managed-bean>
+		<managed-bean-name>changeLocaleListener</managed-bean-name>
+		<managed-bean-class>org.mql.jsf.web.listeners.ChangeLocaleListener</managed-bean-class>
+		<managed-bean-scope>application</managed-bean-scope>
+	</managed-bean>
+</faces-config>

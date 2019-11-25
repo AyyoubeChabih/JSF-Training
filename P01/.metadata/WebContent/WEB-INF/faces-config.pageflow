@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf15571587273860" configfile="/P01/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="Exp02" id="pf15571623283361" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf15571623283372 pf15571623569524 pf15579275946062" path="/Exp02.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="views/NouveauDocumentOk" x="180" y="48" id="pf15571623283373" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf15571623283372" path="/views/NouveauDocumentOk.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="views/Error" x="156" y="180" id="pf15571623569525" referenceLink="//@navigationRule.0/@navigationCase.2/@toViewId|" inlinks="pf15571623569524" path="/views/Error.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="Exp01" id="pf15579275946063" referenceLink="//@navigationRule.0/@navigationCase.2/@toViewId|" inlinks="pf15579275946062" path="/Exp01.jsp"/>
+  <links id="pf15571623283372" target="pf15571623283373" source="pf15571623283361" outcome="ok"/>
+  <links id="pf15571623569524" target="pf15571623569525" source="pf15571623283361" outcome="error"/>
+  <links id="pf15579275946062" target="pf15579275946063" source="pf15571623283361" outcome="quitter"/>
+</pageflow:Pageflow>

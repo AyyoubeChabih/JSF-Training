@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config
+    xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
+    version="2.2">
+
+	<managed-bean>
+		<managed-bean-name>doc01</managed-bean-name> <!-- cree par l'appel du constructeur sans parametre -->
+		<managed-bean-class>org.mql.jsf.models.Document</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>  <!-- par tous les users, session un seul client, request a chaque requete nouvelle crearion, view , none a chaque acces nouvelle creation-->
+		<managed-property>
+			<property-name>isbn</property-name>
+			<value>324-243-98</value>  <!-- il passe par setter -->
+		</managed-property>
+		<managed-property>
+			<property-name>title</property-name>
+			<value>Introduction à JSF</value>
+		</managed-property>
+	</managed-bean>
+	
+	<managed-bean>
+		<managed-bean-name>biblioServiceDefault</managed-bean-name>
+		<managed-bean-class>org.mql.jsf.web.business.BiblioServiceDefault</managed-bean-class>
+		<managed-bean-scope>application</managed-bean-scope>
+	</managed-bean>
+	
+	<managed-bean>
+		<managed-bean-name>documentAction</managed-bean-name>
+		<managed-bean-class>org.mql.jsf.web.actions.DocumentAction</managed-bean-class>
+		<managed-bean-scope>application</managed-bean-scope>
+		<managed-property>
+			<property-name>biblioService</property-name>
+			<value>#{biblioServiceDefault }</value>
+		</managed-property>
+	</managed-bean>
+	
+	<navigation-rule>
+		<from-view-id>/Exp02.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>ok</from-outcome>
+			<to-view-id>/views/NouveauDocumentOk.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>error</from-outcome>
+			<to-view-id>/views/Error.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>quitter</from-outcome>
+			<to-view-id>/Exp01.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+</faces-config>
